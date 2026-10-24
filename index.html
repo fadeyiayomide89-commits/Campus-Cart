@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B1F3A">
+  <meta name="description" content="CampusCart connects Nigerian university students with campus vendors. Discover products, compare prices and shop locally.">
+  <title>CampusCart | Your Campus Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="announcement">
+    Your campus marketplace, all in one place.
+    <span>Made for Nigerian students.</span>
+  </div>
+
+  <header class="navbar">
+    <a href="#home" class="logo">
+      <span class="logo-icon">C</span>
+      Campus<span class="logo-blue">Cart</span>
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#marketplace">Marketplace</a>
+      <a href="#vendors">For vendors</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-button wishlist-nav" id="wishlist-open"
+        aria-label="Open wishlist">
+        ♡ <span id="wishlist-count">0</span>
+      </button>
+
+      <button class="cart-button" id="cart-open">
+        <span>Bag</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+
+      <button class="mobile-menu" id="mobile-menu"
+        aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main id="home">
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="eyebrow hero-eyebrow">
+          THE STUDENT MARKETPLACE
+        </span>
+
+        <h1>Campus life.<br>
+          <span>Made easier.</span>
+        </h1>
+
+        <p class="hero-description">
+          From everyday essentials to your favourite campus finds,
+          discover products from vendors serving Nigerian universities.
+        </p>
+
+        <form id="search-form" class="hero-search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input type="search" id="search-input"
+            placeholder="What are you looking for?"
+            aria-label="Search products">
+          <button type="submit" class="primary-button">Search</button>
+        </form>
+
+        <div class="hero-links">
+          <span>Popular:</span>
+          <button type="button" class="quick-search" data-search="bags">Bags</button>
+          <button type="button" class="quick-search" data-search="electronics">Electronics</button>
+          <button type="button" class="quick-search" data-search="food">Food</button>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <strong>One place</strong>
+            <span>To discover campus vendors</span>
+          </div>
+          <div>
+            <strong>More choice</strong>
+            <span>Products across categories</span>
+          </div>
+          <div>
+            <strong>Campus first</strong>
+            <span>Shopping made convenient</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-image-main">
+          <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85"
+            alt="Red and white sneaker product photography">
+        </div>
+
+        <div class="hero-floating-card">
+          <span class="floating-icon">✦</span>
+          <div>
+            <strong>Discover your next find</strong>
+            <span>Explore the marketplace</span>
+          </div>
+        </div>
+
+        <div class="hero-circle"></div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><span class="trust-icon">⌕</span><span>Discover products</span></div>
+      <div><span class="trust-icon">◇</span><span>Compare prices</span></div>
+      <div><span class="trust-icon">♡</span><span>Save favourites</span></div>
+      <div><span class="trust-icon">▤</span><span>Shop by campus</span></div>
+    </section>
+
+    <section class="section categories-section" id="categories">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">FIND YOUR THING</span>
+          <h2>Shop by category</h2>
+          <p>Whatever you need for campus, start here.</p>
+        </div>
+        <a href="#marketplace" class="text-link">Explore all products →</a>
+      </div>
+
+      <div class="category-grid">
+        <button class="category-card" data-category="Fashion">
+          <span class="category-symbol">◈</span>
+          <strong>Fashion</strong>
+          <span>Clothing, shoes & bags</span>
+        </button>
+
+        <button class="category-card" data-category="Electronics">
+          <span class="category-symbol">⌘</span>
+          <strong>Electronics</strong>
+          <span>Gadgets & accessories</span>
+        </button>
+
+        <button class="category-card" data-category="Food">
+          <span class="category-symbol">◉</span>
+          <strong>Food & drinks</strong>
+          <span>Meals & snacks</span>
+        </button>
+
+        <button class="category-card" data-category="Beauty">
+          <span class="category-symbol">✧</span>
+          <strong>Beauty</strong>
+          <span>Skincare & essentials</span>
+        </button>
+
+        <button class="category-card" data-category="Room Essentials">
+          <span class="category-symbol">⌂</span>
+          <strong>Room essentials</strong>
+          <span>Decor & organisation</span>
+        </button>
+
+        <button class="category-card" data-category="Services">
+          <span class="category-symbol">▧</span>
+          <strong>Services</strong>
+          <span>Design & student services</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="marketplace-section" id="marketplace">
+      <div class="section">
+        <div class="section-heading marketplace-heading">
+          <div>
+            <span class="eyebrow">THE CAMPUSCART FINDS</span>
+            <h2>Explore the marketplace</h2>
+            <p>Discover your next favourite thing.</p>
+          </div>
+          <button id="clear-filters" class="secondary-button">
+            Clear filters
+          </button>
+        </div>
+
+        <div class="marketplace-controls">
+          <label class="filter-field">
+            <span>University</span>
+            <select id="campus-filter">
+              <option value="all">All universities</option>
+              <option value="Lead City University">Lead City University</option>
+              <option value="University of Ibadan">University of Ibadan</option>
+              <option value="University of Lagos">University of Lagos</option>
+              <option value="Covenant University">Covenant University</option>
+              <option value="Obafemi Awolowo University">Obafemi Awolowo University</option>
+              <option value="Lagos State University">Lagos State University</option>
+              <option value="University of Nigeria, Nsukka">University of Nigeria, Nsukka</option>
+            </select>
+          </label>
+
+          <label class="filter-field">
+            <span>Category</span>
+            <select id="category-filter">
+              <option value="All">All categories</option>
+              <option value="Fashion">Fashion</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Food">Food & drinks</option>
+              <option value="Beauty">Beauty</option>
+              <option value="Room Essentials">Room essentials</option>
+              <option value="Services">Services</option>
+            </select>
+          </label>
+
+          <label class="filter-field sort-field">
+            <span>Sort by</span>
+            <select id="sort-filter">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: low to high</option>
+              <option value="price-high">Price: high to low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="results-toolbar">
+          <p id="results-message" aria-live="polite">Loading products...</p>
+          <span class="demo-note">Sample listings · Not verified vendor offers</span>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+      </div>
+    </section>
+
+    <section class="vendor-section" id="vendors">
+      <div class="vendor-banner">
+        <div class="vendor-banner-content">
+          <span class="eyebrow">GROW YOUR CAMPUS BUSINESS</span>
+          <h2>Students need what you sell.</h2>
+          <p>
+            Bring your products to CampusCart and help students discover
+            your business. Submit an application to get started.
+          </p>
+          <button class="light-button" id="vendor-open">
+            Become a vendor <span>→</span>
+          </button>
+        </div>
+        <div class="vendor-decoration" aria-hidden="true">
+          <div class="vendor-square square-one"></div>
+          <div class="vendor-square square-two"></div>
+          <div class="vendor-square square-three">CC</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div>
+        <a href="#home" class="logo footer-logo">
+          <span class="logo-icon">C</span>
+          Campus<span class="logo-blue">Cart</span>
+        </a>
+        <p>Your campus. Your vendors. Your marketplace.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#marketplace">Shop products</a>
+        <a href="#categories">Categories</a>
+        <a href="#vendors">Sell on CampusCart</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="current-year"></span> CampusCart</span>
+      <span>Built for campus life in Nigeria.</span>
+    </div>
+  </footer>
+
+  <!-- Shopping cart drawer -->
+  <div class="overlay" id="cart-overlay" hidden></div>
+
+  <aside class="side-drawer" id="cart-drawer"
+    role="dialog" aria-modal="true" aria-labelledby="cart-title"
+    aria-hidden="true" inert>
+    <div class="drawer-header">
+      <div>
+        <span class="eyebrow">YOUR SELECTIONS</span>
+        <h2 id="cart-title">Shopping bag <span id="drawer-cart-count">(0)</span></h2>
+      </div>
+      <button class="close-button" id="cart-close" aria-label="Close cart">×</button>
+    </div>
+
+    <div class="cart-items" id="cart-items"></div>
+
+    <div class="cart-footer" id="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <strong id="cart-subtotal">₦0</strong>
+      </div>
+      <p class="cart-disclaimer">
+        Delivery fees, if applicable, are not included. Checkout is a demo
+        and no payment will be collected.
+      </p>
+      <button class="primary-button checkout-button" id="checkout-button">
+        Continue to checkout →
+      </button>
+      <button class="continue-shopping" id="continue-shopping">
+        Continue shopping
+      </button>
+    </div>
+  </aside>
+
+  <!-- Wishlist drawer -->
+  <div class="overlay" id="wishlist-overlay" hidden></div>
+
+  <aside class="side-drawer" id="wishlist-drawer"
+    role="dialog" aria-modal="true" aria-labelledby="wishlist-title"
+    aria-hidden="true" inert>
+    <div class="drawer-header">
+      <div>
+        <span class="eyebrow">SAVED FOR LATER</span>
+        <h2 id="wishlist-title">Your wishlist</h2>
+      </div>
+      <button class="close-button" id="wishlist-close" aria-label="Close wishlist">×</button>
+    </div>
+    <div class="cart-items" id="wishlist-items"></div>
+  </aside>
+
+  <!-- Vendor application modal -->
+  <div class="modal-overlay" id="vendor-modal" hidden>
+    <section class="modal" role="dialog" aria-modal="true"
+      aria-labelledby="vendor-modal-title">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">JOIN THE MARKETPLACE</span>
+          <h2 id="vendor-modal-title">Vendor application</h2>
+          <p>Tell us about your business.</p>
+        </div>
+        <button class="close-button" id="vendor-close" aria-label="Close form">×</button>
+      </div>
+
+      <form id="vendor-form">
+        <label>
+          Business or shop name
+          <input name="businessName" required maxlength="100"
+            placeholder="e.g. Everyday Finds">
+        </label>
+
+        <label>
+          Your full name
+          <input name="fullName" required maxlength="100"
+            placeholder="Enter your name">
+        </label>
+
+        <label>
+          Email address
+          <input name="email" type="email" required maxlength="150"
+            placeholder="you@example.com">
+        </label>
+
+        <label>
+          Contact phone number
+          <input name="phone" type="tel" required maxlength="20"
+            placeholder="Your business contact number">
+        </label>
+
+        <label>
+          University you serve
+          <select name="campus" required>
+            <option value="">Choose a university</option>
+            <option>Lead City University</option>
+            <option>University of Ibadan</option>
+            <option>University of Lagos</option>
+            <option>Covenant University</option>
+            <option>Obafemi Awolowo University</option>
+            <option>Lagos State University</option>
+            <option>University of Nigeria, Nsukka</option>
+            <option>Other Nigerian university</option>
+          </select>
+        </label>
+
+        <label>
+          Business category
+          <select name="category" required>
+            <option value="">Choose a category</option>
+            <option>Fashion</option>
+            <option>Electronics</option>
+            <option>Food</option>
+            <option>Beauty</option>
+            <option>Room Essentials</option>
+            <option>Services</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label>
+          Tell us about your business
+          <textarea name="description" required maxlength="600" rows="3"
+            placeholder="What do you sell, and how do you serve students?"></textarea>
+        </label>
+
+        <button type="submit" class="primary-button full-button">
+          Submit application
+        </button>
+        <p class="form-note">
+          Demo only: applications are saved in this browser and are not
+          sent to CampusCart administrators.
+        </p>
+      </form>
+    </section>
+  </div>
+
+  <!-- Demo checkout modal -->
+  <div class="modal-overlay" id="checkout-modal" hidden>
+    <section class="modal checkout-modal" role="dialog"
+      aria-modal="true" aria-labelledby="checkout-title">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">ORDER SUMMARY</span>
+          <h2 id="checkout-title">Review your order</h2>
+          <p>Check your items before proceeding.</p>
+        </div>
+        <button class="close-button" id="checkout-close"
+          aria-label="Close checkout">×</button>
+      </div>
+
+      <div id="checkout-summary"></div>
+      <div class="checkout-total">
+        <span>Order subtotal</span>
+        <strong id="checkout-total">₦0</strong>
+      </div>
+      <p class="form-note">
+        This is a front-end demonstration. No payment, delivery booking
+        or real order submission takes place.
+      </p>
+      <button class="primary-button full-button" id="demo-order-button">
+        Place demo order
+      </button>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
